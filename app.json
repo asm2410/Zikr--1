@@ -1,0 +1,213 @@
+{
+  "expo": {
+    "name": "ZIKR",
+    "slug": "zikr-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "zikr",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.zikr.app",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "remote-notification"
+        ],
+        "NSPhotoLibraryAddUsageDescription": "يحتاج التطبيق إلى الوصول للمعرض لحفظ صور الأذكار",
+        "NSPhotoLibraryUsageDescription": "يحتاج التطبيق إلى الوصول للمعرض لحفظ ومشاركة صور الأذكار"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#1C1B1F",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "package": "com.zikr.app",
+      "permissions": [
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.VIBRATE",
+        "android.permission.SCHEDULE_EXACT_ALARM",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      "expo-font",
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "يحتاج التطبيق إلى الوصول للمعرض لحفظ صور الأذكار",
+          "savePhotosPermission": "يحتاج التطبيق إلى حفظ صور الأذكار في المعرض"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "يحتاج التطبيق إلى الوصول لموقعك لمعرفة المدينة وتحديد أوقات الصلاة بدقة."
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "enableBackgroundPlayback": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#6750A4"
+        }
+      ],
+      [
+        "expo-widgets",
+        {
+          "groupIdentifier": "group.com.zikr.app",
+          "widgets": [
+            {
+              "name": "DailyDhikrWidget",
+              "displayName": "ذكر اليوم",
+              "description": "عرض ذكر عشوائي يتغير خلال اليوم",
+              "supportedFamilies": [
+                "systemSmall",
+                "systemMedium"
+              ]
+            },
+            {
+              "name": "TasbeehWidget",
+              "displayName": "المسبحة",
+              "description": "عداد تسبيح على الشاشة الرئيسية",
+              "supportedFamilies": [
+                "systemSmall"
+              ]
+            },
+            {
+              "name": "ProgressWidget",
+              "displayName": "تقدم الأذكار",
+              "description": "متابعة تقدم أذكار الصباح والمساء",
+              "supportedFamilies": [
+                "systemMedium",
+                "systemLarge"
+              ]
+            },
+            {
+              "name": "BestPracticeWidget",
+              "displayName": "أفضل عمل",
+              "description": "أفضل الأعمال عند الله",
+              "supportedFamilies": [
+                "systemSmall",
+                "systemMedium"
+              ]
+            }
+          ]
+        }
+      ],
+      [
+        "react-native-android-widget",
+        {
+          "widgets": [
+            {
+              "name": "DailyDhikrWidget",
+              "label": "ذكر اليوم",
+              "description": "ذكر يتغير خلال اليوم",
+              "minWidth": "200dp",
+              "minHeight": "100dp",
+              "previewImage": "./assets/icon.png",
+              "resizeMode": "horizontal|vertical",
+              "updatePeriodMillis": 3600000
+            },
+            {
+              "name": "TasbeehWidget",
+              "label": "المسبحة",
+              "description": "عداد التسبيح",
+              "minWidth": "100dp",
+              "minHeight": "100dp",
+              "previewImage": "./assets/icon.png",
+              "resizeMode": "horizontal|vertical",
+              "updatePeriodMillis": 0
+            },
+            {
+              "name": "ProgressWidget",
+              "label": "تقدم الأذكار",
+              "description": "تقدم أذكار الصباح والمساء",
+              "minWidth": "300dp",
+              "minHeight": "150dp",
+              "previewImage": "./assets/icon.png",
+              "resizeMode": "horizontal|vertical",
+              "updatePeriodMillis": 1800000
+            },
+            {
+              "name": "BestPracticeWidget",
+              "label": "أفضل عمل",
+              "description": "أفضل الأعمال عند الله",
+              "minWidth": "200dp",
+              "minHeight": "100dp",
+              "previewImage": "./assets/icon.png",
+              "resizeMode": "horizontal|vertical",
+              "updatePeriodMillis": 1800000
+            }
+          ],
+          "fonts": []
+        }
+      ],
+      [
+        "expo-quick-actions",
+        {
+          "androidIcons": {
+            "shortcut_search": {
+              "foregroundImage": "./assets/shortcut-search.png",
+              "backgroundColor": "#6750A4"
+            },
+            "shortcut_tasbeeh": {
+              "foregroundImage": "./assets/shortcut-tasbeeh.png",
+              "backgroundColor": "#6750A4"
+            },
+            "shortcut_saved": {
+              "foregroundImage": "./assets/shortcut-saved.png",
+              "backgroundColor": "#6750A4"
+            }
+          }
+        }
+      ],
+      "expo-sharing",
+      "expo-status-bar"
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "build": {
+          "experimental": {
+            "ios": {
+              "appExtensions": [
+                {
+                  "targetName": "ExpoWidgetsTarget",
+                  "bundleIdentifier": "com.zikr.app.ExpoWidgetsTarget",
+                  "entitlements": {
+                    "com.apple.security.application-groups": [
+                      "group.com.zikr.app"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "projectId": "e111416f-1582-4772-893e-ab728a3cb7d2"
+      }
+    },
+    "owner": "asm2387"
+  }
+}
